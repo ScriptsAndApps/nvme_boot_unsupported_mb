@@ -1,0 +1,19 @@
+1. Use normal ssd and install windowsd on normal ssd.
+2. Keep the ssd connected!
+3. Try to install windows on NVME with UEFI enabled no legacy
+4. windows will reboot unsuccessfully ( Remove the installation usb )
+5. use the bios/windows recovery to boot in your NORMAL SSD
+6. clean usb (the one you will keep in your pc to boot nvme)
+7. convert gpt
+8. create 100mb partition fat32 uefi assign a letter
+9. use easyUEFI to backup UEFI from NORMAL SSD (Optional use BCDEDIT to set boot timeout to 0)
+10. use easyUEFI to restore the backup to the usb UEFI partition (AFTER install of the windows on nvme with usb)
+11. create  +- 300mb partition on usb with FAT or FAT32 format. make primary / active (the rest of the usb you can use as storage)
+12. Use DEUT to format. the 300MB PARTITION (lETTER YOU can look up in Disk management)
+13. Use DEUT to set boot on 300MB partition (can be skipped i think)
+14. Uase DUET to install REFINED on the 300mb partition
+15. now boot the new USB in the second UEFI option (the first will fail) set the bios to boot the second UEFI on your usb.
+16. windows will continue the installation on NVME 
+17. Edit your timeout in the config on the usb  to -1 . save. Your done! dont remove the usb if you want to boot the NVME
+
+(some steps can be inccorect this gives a basic idea how to use it)
